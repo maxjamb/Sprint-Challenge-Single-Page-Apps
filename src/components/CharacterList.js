@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CharacterCard from "./CharacterCard";
 import axios from "axios";
+import SearchForm from "./SearchForm";
 
 
 
@@ -8,7 +9,8 @@ export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
 
   const[char, setChar] = useState([]);
-
+  const[searchTerm, setSearch] = useState([]);
+  
   const rickAndMortyAPI = `https://rickandmortyapi.com/api/character/`
 
   useEffect(() => { 
@@ -30,11 +32,14 @@ export default function CharacterList() {
     <section className="character-list">
       {char.map(character => {
         return (
-          <CharacterCard 
-          key={character.id}
-          name={character.name}
-          image={character.image}
-          />
+          <SearchForm searchTerm={searchTerm} setSearch={setSearch}/>
+          // <CharacterCard //key={character.id} data={character}
+          // // key={character.id}
+          // name={character.name}
+          // species={character.species}
+          // status={character.status}
+          // image={character.image}
+          // />
         )
       })
       }

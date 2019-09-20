@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const WelcomePageStyles = styled.div`
     width: 400px;
-    border: 3px solid red;
+    border: 1px solid grey;
     display: flex;
     justify-content: space-evenly;
     text-align: center;2
